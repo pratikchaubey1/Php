@@ -1,0 +1,139 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f6f6f6;
+  padding: 30px;
+  margin: 0;
+}
+
+/* ADD BUTTON */
+.add-btn {
+  background: #0bbf4f;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* TABLE */
+.table {
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.table-head,
+.table-row {
+  display: grid;
+  grid-template-columns: 3fr 1.3fr 1.5fr 1fr;
+  padding: 14px 16px;
+}
+
+.table-head {
+  background: #15b74e;
+  font-weight: bold;
+  color: #000;
+}
+
+.table-row {
+  border-bottom: 1px solid #ddd;
+  align-items: start;
+}
+
+/* SUPPLIER COLUMN */
+.supplier-col {
+  display: flex;
+   color: #0000ee;
+  flex-direction: column;
+}
+
+/* NAME + ADDRESS (ONLY BLUE CHANGE) */
+.supplier-text {
+  color: #0000ee;
+  line-height: 1.4;
+}
+
+/* ADDRESS */
+.supplier-address {
+  margin-top: 2px;
+  color: #0000ee;
+}
+
+/* FILE INFO (NORMAL BLACK) */
+.file-info {
+  font-size: 13px;
+  color: #000;
+  margin-top: 2px;
+  white-space: nowrap;
+}
+
+/* PDF ICON */
+.pdf-icon {
+  width: 14px;
+  height: 16px;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-box {
+  background: #fff;
+  width: 420px;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.modal-box h3 {
+  margin-top: 0;
+}
+
+/* FORM */
+.modal-box input,
+.modal-box textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal-box textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+/* ACTION BUTTONS */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-save {
+  background: #0bbf4f;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn-cancel {
+  background: #ccc;
+  border: none;
+  padding: 8px 14px;
+  cursor: pointer;
+  border-radius: 4px;
+}
