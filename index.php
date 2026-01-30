@@ -22,11 +22,22 @@
   <div class="modal-box">
     <h3>Add Supplier</h3>
 
-    <form onsubmit="saveSupplier(event)">
+    
+    <form onsubmit="saveSupplier(event)" enctype="multipart/form-data">
+
       <input name="supplierName" placeholder="Supplier Name" required />
       <textarea name="supplierAddress" placeholder="Address" required></textarea>
       <input name="bannedBy" placeholder="Banned By" required />
-      <input type="number" name="banningPeriod" placeholder="Years" min="1" required />
+      <input type="text" name="banningPeriod" list="period-list" placeholder="Years or 'Until further orders'" required />
+      <datalist id="period-list">
+        <option value="Until further orders">
+        <option value="1">
+        <option value="2">
+        <option value="3">
+        <option value="5">
+      </datalist>
+      <label>Banned Date:</label>
+      <input type="date" name="bannedDate" required />
 
       <label>Upload PDF:</label>
       <input type="file" id="pdfFile" name="pdfFile" accept=".pdf" />

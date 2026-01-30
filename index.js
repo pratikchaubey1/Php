@@ -41,50 +41,46 @@ function loadData() {
 
       res.data.forEach((s, i) => {
         rows.innerHTML += `
-          <div class="table-row">
+    <div class="table-row">
 
-            <div class="supplier-col"
-                 onclick="openPDF('${s.pdfPath}', ${s.id})"
-                 style="cursor:pointer;">
+      <div class="supplier-col"
+           onclick="openPDF(${s.id})"
+           style="cursor:pointer;">
 
-              <a class="supplier-link">
-                ${i + 1}. ${s.supplierName}
-              </a>
+        <a class="supplier-link">
+          ${i + 1}. ${s.supplierName}
+        </a>
 
-              <div class="supplier-address">
-                ${s.supplierAddress.replaceAll(",", "<br>")}
-                ${
-                  s.pdfPath
-                    ? `
-                  <span class="file-meta">
-                    (${s.fileSize && s.fileSize > 0 ? s.fileSize : "—"} KB${
-                        s.fileCode ? `, ${s.fileCode}` : ""
-                      })
-                  </span>
-                  <img src="Media/pdf.png" class="pdf-inline-icon">
-                `
-                    : ""
-                }
-              </div>
-            </div>
+        <div class="supplier-address">
+          ${s.supplierAddress.replaceAll(",", "<br>")}
+          ${s.pdfPath
+            ? `
+            <span class="file-meta">
+              (${s.fileSize} KB${s.fileCode ? `, ${s.fileCode}` : ""})
+            </span>
+            <img src="Media/pdf.png" class="pdf-inline-icon">
+          `
+            : ""
+          }
+        </div>
+      </div>
 
-            <div>${formatDate(s.bannedDate)}</div>
-            <div>${s.bannedBy}</div>
-            <div>${s.banningPeriod} Years</div>
+      <div>${formatDate(s.bannedDate)}</div>
+      <div>${s.bannedBy}</div>
+      <div>
+        ${s.banningPeriod}
+        ${!isNaN(s.banningPeriod) ? " Years" : ""}
+      </div>
 
-          </div>
-        `;
+    </div>
+  `;
       });
     });
 }
 
 /* OPEN PDF */
-function openPDF(pdfPath, id) {
-  if (pdfPath) {
-    window.open(pdfPath, "_blank");
-  } else {
-    window.open(`${API}?id=${id}&pdf=1`, "_blank");
-  }
+function openPDF(id) {
+  window.open(`${API}?id=${id}&pdf=1`, "_blank");
 }
 
 /* MODAL */

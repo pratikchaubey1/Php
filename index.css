@@ -45,7 +45,7 @@ body {
 /* SUPPLIER COLUMN */
 .supplier-col {
   display: flex;
-   color: #0000ee;
+  color: #0000ee;
   flex-direction: column;
 }
 
@@ -136,4 +136,38 @@ body {
   padding: 8px 14px;
   cursor: pointer;
   border-radius: 4px;
+}
+
+/* --- ADDED / FIXED STYLES --- */
+
+/* Ensure padding doesn't break widths */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* LABEL STYLING WITHIN MODAL */
+.modal-box label {
+  display: block;
+  font-weight: 600;
+  margin-top: 15px;
+  margin-bottom: 6px;
+  color: #333;
+  font-size: 14px;
+}
+
+/* ADJUST FILE INPUT */
+.modal-box input[type="file"] {
+  border: 1px dashed #ccc;
+  /* Dashed border looks more like a drop zone / file area */
+  background: #f9f9f9;
+  padding: 8px;
+  height: auto;
+  /* Let it adjust */
+}
+
+/* REMOVE BOTTOM MARGIN FROM LAST ELEMENT IN ACTIONS */
+.actions {
+  margin-top: 20px;
 }
